@@ -11,30 +11,35 @@
 int main(int argc, const char * argv[]) {
     
     NSArray *num = @[@3,@7, @6, @8];
-    id max;
+    id max, min;
 //    [num objectAtIndex: i];
     max = num[0];
 
-    for (int i = 1; i < [num count]; i++) {
+    for (int i = 0; i < [num count]; i++) {
     
         if (max < num[i]) {
             max = num[i];
         }
+        if (min == nil || min > num[i]) {
+            min = num[i];
+        }
     }
-    NSLog(@"The largest number is %@", max);
+    NSLog(@"The largest number is %@ and smallest is %@", max, min);
     
     NSArray *arr = @[@44,@5, @6];
-    id max2;
-    //    [num objectAtIndex: i];
+    id max2, min2;
     max2 = arr[0];
     
-    for (int i = 1; i < [arr count]; i++) {
+    for (int i = 0; i < [arr count]; i++) {
         
         if (max2 < arr[i]) {
             max2 = arr[i];
         }
+        if (min2 == nil || min2 > arr[i]) {
+            min2 = arr[i];
+        }
     }
-    NSLog(@"The highest number is %@", max2);
+    NSLog(@"The highest number is %@ and lowest is %@", max2, min2);
     return 0;
 }
 
