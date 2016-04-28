@@ -8,40 +8,51 @@
 
 #import <Foundation/Foundation.h>
 
+NSString *getLargestNum(NSArray *makes) {
+    int max = (int)[makes count];
+    int i,largest;
+    for (int i = 0; i < [makes count]; i++) {
+        
+        if (makes[i] > makes[max]) {
+            largest = i;
+        }
+        
+    }return makes[i];
+}
+
+    
+//    int i = arc4random_uniform(max);
+    
+    
 int main(int argc, const char * argv[]) {
     
-    NSArray *num = @[@3,@7, @6, @8];
-    id max, min;
-//    [num objectAtIndex: i];
-    max = num[0];
-
-    for (int i = 0; i < [num count]; i++) {
-    
-        if (max < num[i]) {
-            max = num[i];
-        }
-        if (min == nil || min > num[i]) {
-            min = num[i];
-        }
-    }
-    NSLog(@"The largest number is %@ and smallest is %@", max, min);
-    
-    NSArray *arr = @[@44,@5, @6];
-    id max2, min2;
-    max2 = arr[0];
-    
-    for (int i = 0; i < [arr count]; i++) {
+    @autoreleasepool {
+        NSArray *num =@[@3, @7, @6, @8];
+        NSLog(@"The largest number is: %@", getLargestNum(num));
         
-        if (max2 < arr[i]) {
-            max2 = arr[i];
-        }
-        if (min2 == nil || min2 > arr[i]) {
-            min2 = arr[i];
-        }
+        NSArray *arr = @[@44,@5, @6];
+        NSLog(@"The highest is: %@", getLargestNum(arr));
+
     }
-    NSLog(@"The highest number is %@ and lowest is %@", max2, min2);
     return 0;
 }
+
+//    NSArray *arr = @[@44,@5, @6];
+//    id max2, min2;
+//    max2 = arr[0];
+//    
+//    for (int i = 0; i < [arr count]; i++) {
+//        
+//        if (max2 < arr[i]) {
+//            max2 = arr[i];
+//        }
+//        if (min2 == nil || min2 > arr[i]) {
+//            min2 = arr[i];
+//        }
+//    }
+//    NSLog(@"The highest number is %@ and the lowest is %@", max2, min2);
+//    return 0;
+//}
 
 //        NSArray *a = @[@7.8, @2.1, @3.9, @5.0];
 //        a = [a sortedArrayUsingSelector:@selector(compare:)];
@@ -49,7 +60,22 @@ int main(int argc, const char * argv[]) {
 //        double small = [a[0] doubleValue];
 //        NSLog(@"The biggest number is %.1f", big);
 //        NSLog(@"the smallest number is %.1f", small);
-    
+//    
 //
 // 3, 7, 6, 8
 // 44, 5, 6
+
+// Sum of the objects in an array
+//int main(int argc, const char * argv[]) {
+//    
+//    int sum = 0;
+//    
+//    NSArray *array= @[@5, @6, @2, @9];
+//        for (NSNumber * n in array) {
+//        sum += [n intValue];
+//        for (int i = 0; i < [array count]; i++) {
+//    }
+//    
+//    }NSLog(@"Sum of the array: %d", sum);
+//    return 0;
+//}
