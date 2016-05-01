@@ -6,36 +6,38 @@
 //  Copyright © 2016 Asuka Nakagawa. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
-NSString *getLargestNum(NSArray *makes) {
-    int max = (int)[makes count];
-    int i,largest;
+int getLargestNum(NSArray* makes) {
+//    int max = (int)[makes count];
+    
+    NSNumber *max = makes[0];
+    
     for (int i = 0; i < [makes count]; i++) {
         
-        if (makes[i] > makes[max]) {
-            largest = i;
+        if (max <= makes[i]) {
+            max = makes[i];
         }
-        
-    }return makes[i];
+    }NSLog(@"The largest number is: %@", max);
+    return 0;
+
 }
 
-    
-//    int i = arc4random_uniform(max);
-    
-    
 int main(int argc, const char * argv[]) {
-    
     @autoreleasepool {
+    
         NSArray *num =@[@3, @7, @6, @8];
-        NSLog(@"The largest number is: %@", getLargestNum(num));
-        
-        NSArray *arr = @[@44,@5, @6];
-        NSLog(@"The highest is: %@", getLargestNum(arr));
+        NSLog(@"The highest is: %d", getLargestNum(num));
 
+        NSArray *arr = @[@44,@5, @6];
+        NSLog(@"The highest is: %d", getLargestNum(arr));
+        
     }
     return 0;
+    
 }
+
 
 //    NSArray *arr = @[@44,@5, @6];
 //    id max2, min2;
